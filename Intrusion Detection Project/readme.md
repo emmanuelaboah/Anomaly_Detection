@@ -1,6 +1,6 @@
 ## Objectives
 
-This project aims to applymachine learning techniques for detecting attacks/intrusions. 
+This project aims to apply machine learning techniques for detecting attacks/intrusions. 
 More specifically, the objectives are:
 ```
 1. Machine learning can be achieved from historical data (experience)
