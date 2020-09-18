@@ -1,3 +1,14 @@
+## Overview
+
+As computers and the Internet become ubiquitous in our everyday lives, malicious activities in the cyberspace have increased significantly.  
+Intrusion detection is an area of computer security that focuses  on  detecting  these  attacks  reliably.  
+Intrusion  detection  systems  (IDS)  usually  have  a knowledge  base  containing  rules  that  characterize  attacks.  
+
+Building  such a knowledge  base manually can be time consuming. However, machine learning can help build such a knowledge base  in  a  more  efficient  manner. 
+
+In  order  to  detect  attacks,  we  need  to  differentiate  between instances  of  normal  and  attack  behavior.  
+Based  on  previous  instances  of  normal  and  attack behavior, a machine learning algorithm can gain the knowledge on how to differentiate between the  two  types  of  behavior  and  represent  theknowledge  in  a  form  than  can  be  used  to  predict  if current instances are malicious or n
+
 ## Objectives
 
 This project aims to apply machine learning techniques for detecting attacks/intrusions. 
@@ -11,3 +22,4 @@ More specifically, the objectives are:
 6. Evaluation of machine learning algorithms
 
 ```
+
