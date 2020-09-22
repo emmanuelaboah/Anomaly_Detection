@@ -7,7 +7,7 @@ Intrusion  detection  systems  (IDS)  usually  have  a knowledge  base  containi
 Building  such a knowledge  base manually can be time consuming. However, machine learning can help build such a knowledge base  in  a  more  efficient  manner. 
 
 In  order  to  detect  attacks,  we  need  to  differentiate  between instances  of  normal  and  attack  behavior.  
-Based  on  previous  instances  of  normal  and  attack behavior, a machine learning algorithm can gain the knowledge on how to differentiate between the  two  types  of  behavior  and  represent  theknowledge  in  a  form  than  can  be  used  to  predict  if current instances are malicious or n
+Based  on  previous  instances  of  normal  and  attack behavior, a machine learning algorithm can gain the knowledge on how to differentiate between the  two  types  of  behavior  and  represent  the knowledge  in  a  form  than  can  be  used  to  predict  if current instances are malicious or normal.
 
 ## Objectives
 
