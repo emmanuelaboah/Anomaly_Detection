@@ -1,15 +1,22 @@
+# Import relevant libraries
 import numpy as np
 import pandas as pd
 from pprint import pprint
 from math import log
 
 # Import training data
+# The training data is located in the dataset folder (KDD dataset)
 train_data = pd.read_csv('ids-train.txt',sep='\s+',header=None)
 train_data.columns = ['duration', 'protocol_type', 'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'class']
 #print(train_data)
+
+# Import the testing dataset 
+# It is located in the dataset directory
 test_data = pd.read_csv('ids-test.txt',sep='\s+',header=None)
 test_data.columns = ['duration', 'protocol_type', 'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'class']
 
+
+# Calculate the entropy of the data
 def calculate_entropy(data):
     
     num_counts = len(data)  
