@@ -116,30 +116,33 @@ def test_accuracy(data,tree):
     #print(pred)
     
     
-    #Create a empty DataFrame 
+    # Create an empty DataFrame 
     prediction = pd.DataFrame(columns=["Outcome"]) 
     
-    #Calculate the prediction accuracy
+    # Calculate the prediction accuracy
     for i in range(len(data)):
         prediction.loc[i,"Outcome"] = predict(pred[i],tree,1.0)
         #print(prediction)
     print('Accuracy of testing is: ',(np.sum(prediction["Outcome"] == data["class"])/len(data)))
     
 
-
+# Decision tree for training on the train_data
 tree = decisiion_Tree(train_data)
 import pprint
 pprint.pprint(tree)
 
 
-# Accuracy of Training
+# Compute the Accuracy of Training
 train_true = train_data.iloc[:,:-1].to_dict(orient = "records")
 train_pred = pd.DataFrame(columns=["Outcome"])
 
 for i in range(len(train_data)):
         train_pred.loc[i,"Outcome"] = predict(train_true[i],tree,1.0)
         #print(prediction)
+        
+# Print the accuracy of the training
 print('Accuracy of training is: ',(np.sum(train_pred["Outcome"] == train_data["class"])/len(train_data)))
 
-#test(test_data,tree)
+
+# make prediction of the test dataset and print out the computed accuracy of testing
 test_accuracy(test_data, tree)
