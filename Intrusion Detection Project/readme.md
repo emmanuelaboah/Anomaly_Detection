@@ -27,9 +27,9 @@ More specifically, the objectives are:
 
 In order to execute the decision tree algorithm, follow the instructions below:
 ```
-•	Please make sure the project.py is in the same directory as the KDD dataset.
-•	On Linux/Unix environment, locate ('cd' to) the directory of the folder containing the project.py and the dataset.
-•	Run the following command on the terminal:
+• Please make sure the project.py is in the same directory as the KDD dataset.
+• On Linux/Unix environment, locate ('cd' to) the directory of the folder containing the project.py and the dataset.
+• Run the following command on the terminal:
           $ python project.py
           
 The output tree, training and prediction accuracies will be printed out as shown below:
