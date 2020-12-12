@@ -32,8 +32,7 @@ In order to execute the decision tree algorithm, follow the instructions below:
 • Run the following command on the terminal:
 
           $ python project.py
-          
-The output tree, training and prediction accuracies will be printed out as shown below:
 ```
-![alt text](https://github.com/emmanuelaboah/Anomaly_Detection/blob/master/Intrusion%20Detection%20Project/Images/output.png?raw=true)
+The output tree, training and prediction accuracies will be printed out as shown below:
 
+![alt text](https://github.com/emmanuelaboah/Anomaly_Detection/blob/master/Intrusion%20Detection%20Project/Images/ouput.png)
