@@ -1,22 +1,34 @@
+#____________________________________________________________________
+# Decision Tree Algorithm for Anomaly Detection 
+# ___________________________________________________________________
+
+
 # Import relevant libraries
 import numpy as np
 import pandas as pd
 from pprint import pprint
 from math import log
 
+
 # Import training data
-# The training data is located in the dataset folder (KDD dataset)
+# The training data is located in the dataset folder (KDD dataset) in this directiory 
 train_data = pd.read_csv('ids-train.txt',sep='\s+',header=None)
-train_data.columns = ['duration', 'protocol_type', 'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'class']
+train_data.columns = ['duration', 'protocol_type', 'count', 'srv_count', 'serror_rate', 
+                      'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 
+                      'diff_srv_rate', 'srv_diff_host_rate', 'class']
 #print(train_data)
+
 
 # Import the testing dataset 
 # It is located in the dataset directory
 test_data = pd.read_csv('ids-test.txt',sep='\s+',header=None)
-test_data.columns = ['duration', 'protocol_type', 'count', 'srv_count', 'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'class']
+test_data.columns = ['duration', 'protocol_type', 'count', 'srv_count', 
+                     'serror_rate', 'srv_serror_rate', 'rerror_rate', 'srv_rerror_rate', 
+                     'same_srv_rate', 'diff_srv_rate', 'srv_diff_host_rate', 'class']
 
 
-# Calculate the entropy of the data
+# Calculate the entropy of the whole dataset
+# The main focus is on the target column
 def calculate_entropy(data):
     
     num_counts = len(data)  
@@ -35,13 +47,18 @@ def calculate_entropy(data):
     #print(entropy)
     return entropy
 
+
+# Calculate the relative entropy
 eps = np.finfo(float).eps
 def relative_entropy(data,attribute):
     Class= data.keys()[-1]  
     #print(Class)
-    target_variables = data[Class].unique()  #TDecision
+    
+    # Decision
+    target_variables = data[Class].unique()  
     variables = data[attribute].unique()    
     entropy2 = 0
+    
     for variable in variables:
         entropy = 0
         for target_variable in target_variables:
@@ -55,6 +72,7 @@ def relative_entropy(data,attribute):
     return abs(entropy2)
 
 
+# Build the decision tree
 def decisiion_Tree(data,tree=None): 
     
     node = best_att(data)
