@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 from pprint import pprint
 from math import log
+import pprint
 
 
 # Import training data
@@ -84,7 +85,6 @@ def decisiion_Tree(data,tree=None):
     if tree is None:                    
         tree={}
         tree[node] = {}
-    
    
     # Loop for the making tree using recursion
     for sample in val_attr:
@@ -100,7 +100,14 @@ def decisiion_Tree(data,tree=None):
                    
     return tree
 
+
+# Determine the information gain of the algorithm
 def best_att(data):
+    '''
+    Determine the information gain of each single feature and 
+    select the feature with the largest information gain
+    '''
+ 
     Entropy_att = []
     Info_Gain = []
     for key in data.keys()[:-1]:       
@@ -110,6 +117,8 @@ def best_att(data):
 def pref_node(data, node,value):
     return data[data[node] == value].reset_index(drop=True)
 
+  
+# Define a function for making predictions on the dataset against the ground truth  
 def predict(data,tree,default = 1):
     
     for key in list(data.keys()):
@@ -126,13 +135,13 @@ def predict(data,tree,default = 1):
 
             else:
                 return result
-            
-# Accuracy of prediction
+ 
+
+# Determine the Accuracy of prediction
 def test_accuracy(data,tree):
     
     pred = data.iloc[:,:-1].to_dict(orient = "records")
     #print(pred)
-    
     
     # Create an empty DataFrame 
     prediction = pd.DataFrame(columns=["Outcome"]) 
@@ -146,7 +155,6 @@ def test_accuracy(data,tree):
 
 # Decision tree for training on the train_data
 tree = decisiion_Tree(train_data)
-import pprint
 pprint.pprint(tree)
 
 
