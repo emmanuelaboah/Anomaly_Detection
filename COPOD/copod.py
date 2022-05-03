@@ -7,8 +7,7 @@ from pyod.models.copod import COPOD
 
 
 class CopodModel:
-
-    def __init__(self, X_train, X_test) -> "decision scores":
+    def __init__(self, X_train, X_test):
         self.X_train = X_train
         self.X_test = X_test
         self.clf = COPOD()
@@ -16,7 +15,6 @@ class CopodModel:
     def train(self):
         self.clf.fit(self.X_train)
         y_train_scores = self.clf.decision_scores_
-
         return y_train_scores
 
     def test(self):
